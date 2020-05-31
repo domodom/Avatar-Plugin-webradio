@@ -1,0 +1,19 @@
+{
+	"modules": {
+		"webradio": {
+			"version": "1.0",
+			"name": "radio",
+			"room": "Salon",
+			"eradio": {
+				"NRJ": "nrjfrance",
+				"FUN": "funradio",
+				"FG": "fg",
+				"RTL": "rtl",
+				"RMC": "rmcinfo"
+			},
+			"rules": {
+				"openWebradio": ["radio"]
+			} 
+		}
+	}
+}

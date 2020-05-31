@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Radio</title>
+    <link rel="shortcut icon" href="../assets/images/radio.ico">
+    <script id="radio-de-embedded" src="https://www.radio.fr/inc/microsite/js/full.js"></script>
+    <script src="https://www.radio.fr/assets/player/playerapi.min.js"></script>
+
+    <link rel="stylesheet" href="./css/radio.css">
+    <link rel="stylesheet" href="https://www.radio.fr/inc/microsite/css/radio-emb.css">
+    <link rel="stylesheet" href="https://www.radio.fr/assets/css/all.css">
+    <link rel="stylesheet" href="https://www.radio.fr/assets/player/player.min.css">
+
+</head>
+
+
+<body style="background-color:#292b2f">
+
+    <div id="player" class="ng-app-embedded">
+
+        <div id="ui" ui-view class="microsite embedded-radio-player" 
+            data-playerwidth="320px"
+            data-playertype="web_embedded" 
+            data-playstation data-autoplay="true" 
+            data-apikey="df04ff67dd3339a6fc19c9b8be164d5b5245ae93"></div>
+    </div>
+
+    <div class="container">
+        <img src='../assets/images/off.png' id="exit" class="btn_off" style='display:inline-block; visibility: hidden' />
+        <span class="dropdown dropdown-dark">
+            <select class="dropdown-select" id="list" style="visibility: hidden; display:inline-block">
+                <option value>Sélectionner la radio
+            </select>
+        </span>
+    </div>
+
+
+    <script>
+        require('./radio.js');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "id": "webradio",
+  "classes": {
+    "webradio": 1
+  },
+  "selected": false,
+  "locked": false,
+  "position": {
+    "x": 311,
+    "y": 45
+  },
+  "style": {
+    "background-image": "S:\\SARAH\\Serveur\\resources\\core\\plugins\\webradio\\assets\\images\\webradio.png",
+    "height": 38,
+    "width": 38,
+    "border-color": "rgba(56, 255, 0, 0.75)",
+    "border-width": 2,
+    "border-opacity": 0,
+    "font-size": "14px",
+    "color": "white",
+    "text-valign": "bottom",
+    "text-outline-width": 3,
+    "text-outline-color": "#999"
+  }
+}
