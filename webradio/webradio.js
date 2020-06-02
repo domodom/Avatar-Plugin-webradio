@@ -17,8 +17,9 @@ let cyto;
 let CY;
 let menu;
 let cytoscape;
+let inf_radio = {} ;
 let webradioWindow;
-
+let e_radio;
 
 exports.action = function (data, callback) {
 
@@ -87,9 +88,10 @@ exports.addPluginElements = function (CY_param, cyto_param) {
                     webradioContextMenu(evt);
                   })
                 }
-                 if (openWebRadioWin()) {
+                openWebRadioWin();
+                 if (inf_radio.on) {
                   setTimeout(function () {
-                    displayRadioWin();
+                     displayRadioWin(inf_radio.radio);
                   }, 5000);
                  }
               })
@@ -105,6 +107,9 @@ exports.addPluginElements = function (CY_param, cyto_param) {
 }
 
 exports.onAvatarClose = function (callback) {
+  if (webradioWindow) {
+      webradioWindow.close();
+  }
   if (cyto) {
     cyto.saveAllGraphElements("webradio")
       .then(() => {
@@ -114,19 +119,22 @@ exports.onAvatarClose = function (callback) {
         console.log('Error saving Elements', err)
         callback();
       });
-  }
+    }
 }
 
 function openWebRadioWin() {
+  inf_radio.on = false;
 
-  let onOff = false;
   if (fs.existsSync('./resources/core/plugins/webradio/style.json')) {
     let prop = fs.readJsonSync('./resources/core/plugins/webradio/style.json', {
       throws: false
     });
-    if (prop) onOff = prop.on;
+    if (prop) {  
+      inf_radio.on = prop.on
+      inf_radio.radio = prop.radio
+    }
   }
-  return onOff;
+  return inf_radio;
 }
 
 function addWebradioNode() {
@@ -273,6 +281,13 @@ function displayRadioWin(e_radio) {
     icon: './assets/images/radio.ico',
   }
 
+  if (fs.existsSync('./resources/core/plugins/webradio/style.json')) {
+		let prop = fs.readJsonSync('./resources/core/plugins/webradio/style.json', { throws: false });
+		if (prop) {
+				style.x = prop.x;
+				style.y = prop.y;
+		}
+	}
 
   webradioWindow = new BrowserWindow(style);
   webradioWindow.loadFile('../core/plugins/webradio/html/radio.html');
@@ -343,6 +358,9 @@ function displayRadioWin(e_radio) {
         event.returnValue = true;
         webradioWindow.close();
         break;
+        case 'initOK':
+          event.returnValue = true;
+          break;  
     }
   })
 }

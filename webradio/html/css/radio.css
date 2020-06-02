@@ -24,10 +24,29 @@
 	text-align: center;
 }
 
-.btn_off {
-	/* position: absolute; */
-	top: -1px;
-	right: -1px;
+#unmute {
+	position: absolute;
+	top: 101px;
+	left: 40px;
+	width: 26px;
+	height: 26px;
+	cursor: pointer;
+}
+
+#mute {
+	position: absolute;
+	top: 101px;
+	left: 40px;
+	width: 26px;
+	height: 26px;
+	visibility: hidden;
+	cursor: pointer;
+}
+
+#exit {
+	position: absolute;
+	top: 100px;
+	left: 5px;
 	width: 28px;
 	height: 28px;
 	cursor: pointer;
@@ -37,19 +56,21 @@
 
 .container {
 	margin: 1px auto;
-	width: 200px;
+	width: 300px;
 	text-align: left;
-  }
-  
-  .container > .dropdown {
+}
+
+.container>.dropdown {
 	margin: 0 1px;
 	vertical-align: top;
-  }
-  
-  .dropdown {
-	display: inline-block;
-	position: relative;
+}
+
+.dropdown {
+	/* display: inline-block; */
+	position: absolute;
 	overflow: hidden;
+	top: 100px;
+	left: 70px;
 	height: 28px;
 	width: 150px;
 	background: #f2f2f2;
@@ -62,33 +83,34 @@
 	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
-  }
-  
-  .dropdown:before, .dropdown:after {
+}
+
+.dropdown:before,
+.dropdown:after {
 	content: '';
 	position: absolute;
 	z-index: 2;
-	top: 9px;
-	right: 10px;
+	top: 100px;
+	left: 70px;
 	width: 0;
 	height: 0;
 	border: 4px dashed;
 	border-color: #888888 transparent;
 	pointer-events: none;
-  }
-  
-  .dropdown:before {
+}
+
+.dropdown:before {
 	border-bottom-style: solid;
 	border-top: none;
-  }
-  
-  .dropdown:after {
+}
+
+.dropdown:after {
 	margin-top: 7px;
 	border-top-style: solid;
 	border-bottom: none;
-  }
-  
-  .dropdown-select {
+}
+
+.dropdown-select {
 	position: relative;
 	width: 130%;
 	margin: 0;
@@ -98,54 +120,56 @@
 	font-size: 12px;
 	color: #62717a;
 	text-shadow: 0 1px white;
-	background: #f2f2f2; /* Fallback for IE 8 */
-	background: rgba(0, 0, 0, 0) !important; /* "transparent" doesn't work with Opera */
+	background: #f2f2f2;
+	/* Fallback for IE 8 */
+	background: rgba(0, 0, 0, 0) !important;
+	/* "transparent" doesn't work with Opera */
 	border: 0;
 	border-radius: 0;
 	-webkit-appearance: none;
-  }
-  
-  .dropdown-select:focus {
+}
+
+.dropdown-select:focus {
 	z-index: 3;
 	width: 100%;
 	color: #394349;
-	outline: 2px solid #49aff2;
-	outline: 2px solid -webkit-focus-ring-color;
+	outline: 1px solid #49aff2;
+	outline: 1px solid -webkit-focus-ring-color;
 	outline-offset: -2px;
-  }
-  
-  .dropdown-select > option {
+}
+
+.dropdown-select>option {
 	margin: 3px;
 	padding: 6px 8px;
 	text-shadow: none;
 	background: #f2f2f2;
 	border-radius: 3px;
 	cursor: pointer;
-  }
-  
-  /* Fix for IE 8 putting the arrows behind the select element. */
-  
-  .lt-ie9 .dropdown {
+}
+
+/* Fix for IE 8 putting the arrows behind the select element. */
+
+.lt-ie9 .dropdown {
 	z-index: 1;
-  }
-  
-  .lt-ie9 .dropdown-select {
+}
+
+.lt-ie9 .dropdown-select {
 	z-index: -1;
-  }
-  
-  .lt-ie9 .dropdown-select:focus {
+}
+
+.lt-ie9 .dropdown-select:focus {
 	z-index: 3;
-  }
-  
-  /* Dirty fix for Firefox adding padding where it shouldn't. */
-  
-  @-moz-document url-prefix() {
+}
+
+/* Dirty fix for Firefox adding padding where it shouldn't. */
+
+@-moz-document url-prefix() {
 	.dropdown-select {
-	  padding-left: 6px;
+		padding-left: 6px;
 	}
-  }
-  
-  .dropdown-dark {
+}
+
+.dropdown-dark {
 	background: #444;
 	border-color: #111111 #0a0a0a black;
 	background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
@@ -154,29 +178,28 @@
 	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
 	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
 	box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
-  }
-  
-  .dropdown-dark:before {
+}
+
+.dropdown-dark:before {
 	border-bottom-color: #aaa;
-  }
-  
-  .dropdown-dark:after {
+}
+
+.dropdown-dark:after {
 	border-top-color: #aaa;
-  }
-  
-  .dropdown-dark .dropdown-select {
+}
+
+.dropdown-dark .dropdown-select {
 	color: #aaa;
 	text-shadow: 0 1px black;
-	background: #444;  /* Fallback for IE 8 */
-  }
-  
-  .dropdown-dark .dropdown-select:focus {
+	background: #444;
+	/* Fallback for IE 8 */
+}
+
+.dropdown-dark .dropdown-select:focus {
 	color: #ccc;
-  }
-  
-  .dropdown-dark .dropdown-select > option {
+}
+
+.dropdown-dark .dropdown-select>option {
 	background: #444;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
-  }
-  
-  
+}

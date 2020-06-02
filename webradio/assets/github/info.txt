@@ -1,4 +1,4 @@
 WebRadio
 
-Ce petit plugin permet d'avoir la radio et un player sur l'interface A.V.A.T.A.R
+Ce petit plugin permet d'avoir la radio et un player sur l'interface AV.A.T.A.R
   

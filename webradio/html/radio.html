@@ -17,30 +17,26 @@
 
 
 <body style="background-color:#292b2f">
-
     <div id="player" class="ng-app-embedded">
-
-        <div id="ui" ui-view class="microsite embedded-radio-player" 
-            data-playerwidth="320px"
-            data-playertype="web_embedded" 
-            data-playstation data-autoplay="true" 
+        <div id="ui" ui-view class="microsite embedded-radio-player" data-playerwidth="320px"
+            data-playertype="web_embedded" data-playstation data-autoplay="true"
             data-apikey="df04ff67dd3339a6fc19c9b8be164d5b5245ae93"></div>
     </div>
 
-    <div class="container">
-        <img src='../assets/images/off.png' id="exit" class="btn_off" style='display:inline-block; visibility: hidden' />
+    <!-- <div class="container"> -->
+        <img src='../assets/images/off.png' id="exit"/> 
+        <img src='../assets/images/mute.png' id="mute"/>
+        <img src='../assets/images/unmute.png' id="unmute"/> 
         <span class="dropdown dropdown-dark">
             <select class="dropdown-select" id="list" style="visibility: hidden; display:inline-block">
                 <option value>Sélectionner la radio
             </select>
         </span>
-    </div>
-
+    <!-- </div> -->
 
     <script>
         require('./radio.js');
     </script>
-
 </body>
 
 </html>
