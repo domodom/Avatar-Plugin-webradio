@@ -2,7 +2,7 @@
 
 Ce plugin est un add-on pour le framework [Avatar](https://github.com/Spikharpax/Avatar-Serveur-3.0).
 
-<p align="center"><img src="assets/images/player.png" width="20%" height="20%"/></p>
+<p align="center"><img src="webradio/assets/images/player.png" width="20%" height="20%"/></p>
 
 ***
 ## ★ A savoir
