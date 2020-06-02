@@ -2,8 +2,8 @@
 
 Ce plugin est un add-on pour le framework [Avatar](https://github.com/Spikharpax/Avatar-Serveur-3.0).
 
-<p align="center"><img src="webradio/assets/images/player.png" width="40%" height="40%"/></p>
-<p align="center"><img src="webradio/assets/images/liste.png" width="30%" height="30%"/></p>
+<p align="center"><img src="webradio/assets/images/player.png" width="60%" height="60%"/></p>
+<p align="center"><img src="webradio/assets/images/liste.png" width="18%" height="18%"/></p>
 
 ***
 ## ★ A savoir
