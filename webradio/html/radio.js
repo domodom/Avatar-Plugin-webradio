@@ -70,16 +70,16 @@ document.getElementById('list').addEventListener('change', function () {
     let reponse = ipcRenderer.sendSync('radio', radio)
 })
 
-document.getElementById('mute').addEventListener('click', function(){
-    document.getElementById("unmute").style.visibility = "visible";
-    document.getElementById("mute").style.visibility = "hidden";
-    writeJsonStyle(true);
+document.getElementById('refresh_on').addEventListener('click', function(){
+    document.getElementById("refresh_off").style.visibility = "visible";
+    document.getElementById("refresh_on").style.visibility = "hidden";
+    writeJsonStyle(false);
 });
 
-document.getElementById('unmute').addEventListener('click', function(){
-    document.getElementById("mute").style.visibility = "visible";
-    document.getElementById("unmute").style.visibility = "hidden";
-    writeJsonStyle(false);
+document.getElementById('refresh_off').addEventListener('click', function(){
+    document.getElementById("refresh_on").style.visibility = "visible";
+    document.getElementById("refresh_off").style.visibility = "hidden";
+    writeJsonStyle(true);
 });
 
 function setOnOff() {
@@ -87,11 +87,11 @@ function setOnOff() {
     if (fs.existsSync('./resources/core/plugins/webradio/style.json')) {
       prop = fs.readJsonSync('./resources/core/plugins/webradio/style.json', { throws: false });
       if (prop.on == true) {
-        document.getElementById("unmute").style.visibility = "visible";
-        document.getElementById("mute").style.visibility = "hidden";
+        document.getElementById("refresh_on").style.visibility = "visible";
+        document.getElementById("refresh_off").style.visibility = "hidden";
       } else {
-        document.getElementById("mute").style.visibility = "visible";
-        document.getElementById("unmute").style.visibility = "hidden";
+        document.getElementById("refresh_off").style.visibility = "visible";
+        document.getElementById("refresh_on").style.visibility = "hidden";
       }
     }
   }

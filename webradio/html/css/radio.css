@@ -24,21 +24,21 @@
 	text-align: center;
 }
 
-#unmute {
+#refresh_off {
 	position: absolute;
-	top: 101px;
+	top: 100px;
 	left: 40px;
-	width: 26px;
-	height: 26px;
+	width: 28px;
+	height: 28px;
 	cursor: pointer;
 }
 
-#mute {
+#refresh_on {
 	position: absolute;
-	top: 101px;
+	top: 100px;
 	left: 40px;
-	width: 26px;
-	height: 26px;
+	width: 28px;
+	height: 28x;
 	visibility: hidden;
 	cursor: pointer;
 }
